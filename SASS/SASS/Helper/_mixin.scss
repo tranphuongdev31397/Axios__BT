@@ -1,0 +1,51 @@
+//Button
+@mixin styleButton($color, $bg, $pd-y, $pd-x, $border, $radius, $text-color) {
+    transition: 0.4s all;
+    text-align: center;
+    outline: none;
+    color: $color;
+    background: $bg;
+    padding: $pd-y $pd-x;
+    border: $border 1px solid;
+    border-radius: $radius;
+    color: $text-color;
+}
+@mixin styleButtonHover($bg, $bd-color, $color) {
+    background: $bg;
+    border: $bd-color 1px solid;
+    color: $color;
+}
+@mixin styleTitle($fs1, $fw1, $fs2, $fw2) {
+    span:first-of-type {
+        color: $color-pink1;
+        font-size: $fs1;
+        font-weight: $fw1;
+    }
+    span:last-of-type {
+        color: $color-black1;
+        font-size: $fs2;
+        font-weight: $fw2;
+    }
+}
+@mixin styleWaveBg ($fit, $pos){
+    position: absolute;
+    object-fit: $fit;
+    object-position: $pos;
+    z-index: 0;
+}
+
+
+//Reponsive
+@mixin repond-to($screen) {
+    @if map-has-key($map: $breakpoint, $key: $screen) {
+        $value: map-get(
+            $map: $breakpoint,
+            $key: $screen,
+        );
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn ('Gia tri man hinh k ton tai');
+    }
+}

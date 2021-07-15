@@ -1,0 +1,8 @@
+.intro {
+    background: $color-purple;
+    position: relative;
+    .intro__container .intro__box {
+        z-index: 2;
+        padding: 15px 20px;
+    }
+}

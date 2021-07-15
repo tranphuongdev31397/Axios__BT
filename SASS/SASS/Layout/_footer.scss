@@ -1,0 +1,40 @@
+footer{
+   background-image: url(../img-sass/footer_background.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+   .card__footer:first-child{
+   ul li{
+       border-bottom: none;
+   }
+}
+}
+.footer__form{
+    width: 100%;
+    input{
+        width: 100%;
+        outline:none;
+        padding:5px 15px;
+        text-align: center;
+        color:white;
+        font-weight: $fw-1;
+        border-radius:25px;
+        border: 1px solid $color-pink1;
+        background-color:transparent;
+        margin-bottom:5px;
+        transition: all .5s;
+        &:focus{
+            border:1px solid white
+        }
+    }
+    button{
+        width: 100%;
+    }
+}
+//Reponsive
+@include repond-to('large'){
+footer{
+    height: 500px;
+}
+}

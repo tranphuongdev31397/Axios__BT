@@ -1,0 +1,74 @@
+//CAROUSEL
+.carousel__main {
+    width: 100%;
+    height: 750px;
+    position: relative;
+}
+.carousel__box {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    .carousel__bg {
+        position: relative;
+        height: 100%;
+    
+    }
+}
+.carousel__container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .carousel__item {
+        width: 100%;
+        height: 30%;
+        padding-top: 80px;
+        &:last-of-type img {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+            overflow: hidden;
+            object-position: top;
+        }
+        &:last-of-type {
+            padding-top: 0;
+            height: 70%;
+        }
+    }
+}
+//Reponsive
+
+@include repond-to("large") {
+    .carousel__container {
+        flex-direction: row;
+        height: 100%;
+        .carousel__item {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 80px;
+        }
+    }
+}
+.carousel__main {
+    height: 700px;
+}
+.carousel__box {
+    height: 700px;
+}
+
+@include repond-to("small") {
+    .carousel__main {
+        height: 750px;
+    }
+    .carousel__box {
+        height: 750px;
+    }
+}
